@@ -1,0 +1,56 @@
+{
+  "physics": {
+    "n_hilbert": 50,
+    "delta": 0.3,
+    "delta_range": [
+      0.2,
+      0.4
+    ],
+    "grid_size": 64,
+    "phase_space_extent": 6.0,
+    "noise_sigma": 0.15,
+    "kappa": 0.01,
+    "kappa_phi": 0.005
+  },
+  "model": {
+    "in_channels": 1,
+    "out_channels": 1,
+    "width": 32,
+    "modes": 16,
+    "n_layers": 4,
+    "output_mode": "displacement",
+    "activation": "gelu",
+    "use_residual": true
+  },
+  "training": {
+    "batch_size": 32,
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "scheduler_patience": 10,
+    "scheduler_factor": 0.5,
+    "lambda_mse": 1.0,
+    "lambda_fidelity": 0.5,
+    "lambda_stabilizer": 0.1,
+    "train_samples": 500,
+    "val_samples": 50,
+    "test_samples": 50,
+    "online_learning": false,
+    "device": "cuda",
+    "checkpoint_dir": "./checkpoints",
+    "save_every": 20,
+    "early_stopping_patience": 30,
+    "seed": 42
+  },
+  "evaluation": {
+    "compute_fidelity": true,
+    "compute_squeezing_error": true,
+    "compute_logical_error": true,
+    "compare_homodyne_binning": true,
+    "compare_ideal_phase_estimation": false,
+    "plot_wigner": true,
+    "plot_error_curves": true
+  },
+  "exp_name": "test_run"
+}
