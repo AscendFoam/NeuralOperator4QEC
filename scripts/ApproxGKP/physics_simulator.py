@@ -7,7 +7,7 @@ Based on PRX Quantum review article Section II B:
 - Gaussian displacement noise channel
 - Photon loss and dephasing channels
 
-Combines Gemini's state construction with Doubao's multi-modal data approach.
+Combines state construction with multi-modal data approach.
 """
 
 import numpy as np
